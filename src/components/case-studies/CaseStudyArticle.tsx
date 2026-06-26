@@ -81,6 +81,22 @@ export function CaseStudyArticle({caseStudy}: {caseStudy: CaseStudy}) {
       {caseStudy.referenceMaterial && <CaseStudyReferenceMaterial reference={caseStudy.referenceMaterial}/>}
      </Reveal>
 
+     {caseStudy.demonstrates && caseStudy.demonstrates.length > 0 && (
+      <Reveal className="mt-8">
+       <div className="max-w-3xl rounded-2xl border border-line bg-section p-6">
+        <h2 className="text-xl font-bold text-primary">What this demonstrates</h2>
+        <ul className="mt-4 space-y-2.5 text-secondary">
+         {caseStudy.demonstrates.map(point => (
+          <li key={point} className="flex gap-3">
+           <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"/>
+           <span className="leading-relaxed">{point}</span>
+          </li>
+         ))}
+        </ul>
+       </div>
+      </Reveal>
+     )}
+
      <Reveal className="mt-12">
       <h2 className="text-2xl font-bold text-primary">Risk profile</h2>
       <p className="mt-3 max-w-3xl leading-relaxed text-secondary">{caseStudy.riskIntro}</p>
@@ -162,7 +178,7 @@ export function CaseStudyArticle({caseStudy}: {caseStudy: CaseStudy}) {
 
      <Reveal className="mt-12">
       <div className="max-w-3xl rounded-2xl border border-line bg-section p-6">
-       <h2 className="text-xl font-bold text-primary">What this demonstrates</h2>
+       <h2 className="text-xl font-bold text-primary">In summary</h2>
        <p className="mt-3 leading-relaxed text-secondary">{caseStudy.closing}</p>
       </div>
      </Reveal>

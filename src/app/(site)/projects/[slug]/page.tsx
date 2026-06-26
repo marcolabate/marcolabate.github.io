@@ -30,7 +30,7 @@ export async function generateMetadata({params}:{params:Promise<{slug:string}>})
  const {slug}=await params;
  const p=getProject(slug);
  if(!p)return {};
- return pageMeta({title:`${p.title}: Game QA`,description:p.shortDescription,path:`/projects/${slug}/`,ogImage:p.heroImage});
+ return pageMeta({title:`${p.title} QA Project`,description:p.shortDescription,path:`/projects/${slug}/`,ogImage:p.heroImage});
 }
 
 function List({title,items,lead}:{title:string;items:string[];lead?:string}){return <Card interactive className="h-full"><h2 className="text-2xl font-bold text-primary">{title}</h2>{lead&&<p className="mt-3 font-semibold text-cyan">{lead}</p>}<ul className="mt-4 list-disc space-y-2 pl-5 text-secondary marker:text-cyan">{items.map(i=><li key={i}>{i}</li>)}</ul></Card>}
@@ -73,6 +73,16 @@ export default async function ProjectDetail({params}:{params:Promise<{slug:strin
        {p.engagementFacts.map(fact=><div key={fact.label}><dt className="text-xs font-semibold uppercase tracking-wide text-muted">{fact.label}</dt><dd className="mt-1 text-sm leading-relaxed text-secondary">{fact.value}</dd></div>)}
       </dl>
       {p.coverageCaveat&&<p className="mt-5 border-t border-line pt-4 text-xs leading-relaxed text-muted">{p.coverageCaveat}</p>}
+     </Card>
+    </Reveal>
+   </Container>
+  </section>}
+  {p.qaValueShown&&<section className="pt-8 sm:pt-10">
+   <Container>
+    <Reveal>
+     <Card className="!p-6 sm:!p-7">
+      <h2 className="text-sm font-semibold uppercase tracking-[.25em] text-cyan">QA value shown</h2>
+      <p className="mt-4 text-base leading-relaxed text-secondary sm:text-lg">{p.qaValueShown}</p>
      </Card>
     </Reveal>
    </Container>
