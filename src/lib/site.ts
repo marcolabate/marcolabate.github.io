@@ -4,7 +4,11 @@ import type { Metadata } from 'next';
 // GitHub user page at the domain root (no base path), so canonical URLs and the
 // sitemap/robots references all live directly under this origin.
 export const siteUrl = 'https://marcolabate.github.io';
-export const siteName = 'Marco Labate, Senior Game QA / DevQA Analyst';
+// Short brand name, used for og:site_name and as the page-title suffix.
+export const siteName = 'Marco Labate';
+// Full home-page and default social title, pairing the brand with the primary
+// positioning. Sub-pages compose their own title via the "%s | Marco Labate" template.
+export const siteTitle = 'Marco Labate | Senior Game QA / DevQA Analyst';
 
 // Consistent primary positioning statement reused across metadata, hero, footer
 // and About so the site presents one coherent professional identity.
@@ -31,7 +35,7 @@ export function pageMeta({title, description, path, ogImage = defaultOgImage}: P
   description,
   alternates: {canonical: path},
   openGraph: {
-   title: `${title} · Marco Labate`,
+   title: `${title} | Marco Labate`,
    description,
    url: path,
    siteName,
@@ -40,7 +44,7 @@ export function pageMeta({title, description, path, ogImage = defaultOgImage}: P
   },
   twitter: {
    card: 'summary_large_image',
-   title: `${title} · Marco Labate`,
+   title: `${title} | Marco Labate`,
    description,
    images: ogImage ? [ogImage] : undefined
   }

@@ -19,6 +19,14 @@ export default function Contact(){
   {title: 'Download CV', linkText: 'Download CV', href: publicCvPath, Icon: FileText, external: false, downloadName: publicCvDownloadName, description: 'Public CV version available for recruiters and hiring teams.'}
  ];
 
+ const bestFit = [
+  'Game QA / DevQA roles',
+  'Embedded QA support',
+  'Regression and release-readiness coverage',
+  'Structured playtesting and player-experience feedback',
+  'Software QA, UAT and SQL-based validation'
+ ];
+
  return <>
   <PageHeader eyebrow="Contact" title="Available for studios, publishers, QA partners, and long-term roles.">
    <p>For professional opportunities, freelance QA support, DevQA work, Software QA consulting, or recruitment conversations, use the contact options below.</p>
@@ -41,8 +49,16 @@ export default function Contact(){
     </div>
     <Reveal className="mt-8">
      <Card>
-      <h2 className="text-xl font-bold text-primary">Open to professional QA opportunities</h2>
-      <p className="mt-3 leading-relaxed text-secondary">I am available for Game QA / DevQA, Software QA consulting, UAT, regression testing, defect analysis, and release-readiness support across PC, console, and enterprise software projects.</p>
+      <h2 className="text-xl font-bold text-primary">Best fit</h2>
+      <ul className="mt-4 grid gap-x-8 gap-y-2.5 text-secondary sm:grid-cols-2">
+       {bestFit.map(item => (
+        <li key={item} className="flex gap-3">
+         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"/>
+         <span className="leading-relaxed">{item}</span>
+        </li>
+       ))}
+      </ul>
+      <p className="mt-5 leading-relaxed text-secondary">Available for remote work with international teams, and open to long-term roles, contract engagements and QA consulting.</p>
      </Card>
     </Reveal>
    </Container>

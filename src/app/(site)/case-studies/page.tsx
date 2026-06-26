@@ -16,7 +16,7 @@ export default function CaseStudies() {
  return (
   <>
    <PageHeader eyebrow="Case Studies" title="QA Case Studies">
-    <p>Methodology pieces and applied exercises showing how I structure coverage, exploratory testing and reporting across gameplay systems, live updates, player guidance, progression and multiplayer. Each is clearly labelled and based on public information or hypothetical scenarios, not a disclosure of confidential project work.</p>
+    <p>Methodology pieces and applied exercises showing how I structure coverage, exploratory testing and reporting across gameplay systems, live updates, player guidance, progression and multiplayer. Each is clearly labeled and based on public information or hypothetical scenarios, not a disclosure of confidential project work.</p>
    </PageHeader>
    <section className="py-12 sm:py-16">
     <Container>

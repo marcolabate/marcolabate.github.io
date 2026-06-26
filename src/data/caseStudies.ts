@@ -78,6 +78,9 @@ export type CaseStudy = {
  releasePoints: string[];
  releaseClosing: string;
  closing: string;
+ // Up to 3 scannable bullets, shown near the top, each naming a professional QA
+ // capability the case study demonstrates (not a summary of the whole article).
+ demonstrates?: string[];
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -166,7 +169,7 @@ export const caseStudies: CaseStudy[] = [
   ],
   reportingClosing: 'The handoff should reduce ambiguity, support prioritization and make follow-up validation easier in later builds.',
   releaseTitle: 'Regression and release-readiness value',
-  releaseIntro: 'A practical regression backbone keeps iterative builds focused on the flows most likely to affect release readiness.',
+  releaseIntro: 'A practical regression backbone keeps iterative builds focused on the flows most likely to break before a release.',
   releasePoints: [
    'Run build verification and smoke checks on boot, input, core loop, objective flow, save/load and recently changed high-risk systems.',
    'Focus regression coverage on changed systems, adjacent dependencies and known player-facing risk areas.',
@@ -194,7 +197,12 @@ export const caseStudies: CaseStudy[] = [
    title: 'How this maps to my QA background',
    body: 'This approach reflects the type of QA work I focus on professionally: Senior Game QA, Embedded DevQA, iterative build validation, gameplay systems testing, UI/UX feedback, progression risk, regression coverage and clear evidence handoff for development teams.'
   },
-  closing: 'This case study demonstrates a practical embedded QA mindset: identify risk early, test beyond the happy path, separate technical defects from UX and design risks, provide clear evidence, and help the team make confident decisions before issues become release blockers.'
+  closing: 'This case study demonstrates a practical embedded QA mindset: identify risk early, test beyond the happy path, separate technical defects from UX and design risks, provide clear evidence, and help the team make confident decisions before issues become release blockers.',
+  demonstrates: [
+   'Risk-based embedded QA thinking that targets where overlapping gameplay systems are most likely to break.',
+   'Progression, persistence and save/load coverage that protects player state across checkpoints, reloads and interruptions.',
+   'Clear, Jira-style defect reporting with reproducible steps and evidence built for fast triage and handoff.'
+  ]
  },
  {
   slug: 'live-patch-monitoring',
@@ -282,7 +290,12 @@ export const caseStudies: CaseStudy[] = [
     ['Stale "new content" badge', 'Cosmetic', 'Common', 'C', 'P3', 'Backlog']
    ]
   },
-  closing: 'This case study demonstrates risk-based live monitoring, disciplined escalation and evidence that supports rapid release decisions.'
+  closing: 'This case study demonstrates risk-based live monitoring, disciplined escalation and evidence that supports rapid release decisions.',
+  demonstrates: [
+   'Post-release regression signal detection that surfaces new breakage while the patch context is still current.',
+   'Player-impact triage that converts incoming player reports into reproducible, prioritized findings.',
+   'Hotfix candidate prioritization and fix verification that confirms corrections without expanding risk.'
+  ]
  },
  {
   slug: 'progression-reward-balance',
@@ -370,7 +383,12 @@ export const caseStudies: CaseStudy[] = [
    ],
    note: 'Ranges from repeated samples matter more than single runs; the flag column drives the discussion, not the raw numbers.'
   },
-  closing: 'This case study demonstrates structured comparison, practical balance evidence and a QA approach that connects system output to player motivation.'
+  closing: 'This case study demonstrates structured comparison, practical balance evidence and a QA approach that connects system output to player motivation.',
+  demonstrates: [
+   'Controlled effort-to-reward comparison under matched conditions to expose unequal or dominant gameplay loops.',
+   'Progression pacing and reward-consistency analysis across representative checkpoints and unlock gates.',
+   'Evidence that connects measurable system output to its player-motivation and content-choice impact.'
+  ]
  },
  {
   slug: 'ui-ux-readability-player-guidance',
@@ -458,7 +476,12 @@ export const caseStudies: CaseStudy[] = [
     ['Inconsistent terminology across menus', 'Low', 'Medium', 'C', 'Medium']
    ]
   },
-  closing: 'This case study demonstrates a QA approach that treats clarity, feedback and guidance as functional parts of the player experience.'
+  closing: 'This case study demonstrates a QA approach that treats clarity, feedback and guidance as functional parts of the player experience.',
+  demonstrates: [
+   'Player-guidance and prompt-clarity coverage that checks whether players can understand and trust on-screen state.',
+   'Input-method consistency testing across device swaps, rebinding and mixed keyboard/controller input.',
+   'UI/UX findings framed through player impact, isolating the exact misunderstanding and the state that creates it.'
+  ]
  },
  {
   slug: 'multiplayer-dedicated-server-regression',
@@ -549,7 +572,12 @@ export const caseStudies: CaseStudy[] = [
     'Fix verification repeats the original timing plus one adjacent recovery path'
    ]
   },
-  closing: 'This case study demonstrates structured multiplayer investigation, focused regression coverage and reporting built around state, timing and player impact.'
+  closing: 'This case study demonstrates structured multiplayer investigation, focused regression coverage and reporting built around state, timing and player impact.',
+  demonstrates: [
+   'Session recovery and persistence validation across disconnects, rejoins and dedicated-server restarts.',
+   'Topology-aware multiplayer testing that compares client views against the authoritative server result.',
+   'Reporting built around timing, state and player impact so multiplayer issues stay reproducible and actionable.'
+  ]
  }
 ];
 

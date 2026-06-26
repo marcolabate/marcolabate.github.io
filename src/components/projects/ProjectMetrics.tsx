@@ -115,7 +115,7 @@ export function ProjectMetrics({projectTitle,metrics}:ProjectMetricsProps){
     <div className="border-t border-line pt-8">
      <div className="max-w-3xl">
       <h2 id="public-project-metrics" className="text-xl font-bold text-primary">Public project metrics</h2>
-      <p className="mt-2 text-sm leading-relaxed text-secondary">Publicly available indicators that provide context for the project's market presence and player reception.</p>
+      <p className="mt-2 text-sm leading-relaxed text-secondary">Publicly available indicators that provide context for the project's market presence and player reception. These are public project metrics for the title as a whole, not personal performance metrics, and do not represent any individual contributor's impact on its sales, reviews, or commercial performance.</p>
       <p className="mt-2 text-xs font-semibold uppercase tracking-[.18em] text-cyan">Last checked: June 2026</p>
      </div>
      <div ref={gridRef} className={`mt-5 grid gap-3 sm:grid-cols-2 ${gridColumns}`}>
