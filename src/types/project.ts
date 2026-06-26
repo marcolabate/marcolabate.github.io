@@ -1,0 +1,7 @@
+export type ProjectSectionKey = 'responsibilities' | 'testingActivities' | 'exampleAreasTested' | 'representativeFindings' | 'recommendations' | 'challenges' | 'technologies' | 'lessonsLearned';
+export type StoreLink = { label:string; url:string };
+export type OfficialWebsite = { url:string; ariaLabel:string };
+export type ProjectTrailer = { youtubeId:string; title:string; thumbnailSrc:string };
+export type ProjectFact = { label:string; value:string };
+export type ProjectMetric = { value:string; label:string; numericValue?:number; prefix?:string; suffix?:string; sourceName:string; sourceUrl:string; sourceNote?:string };
+export type Project = { slug:string; title:string; subtitle:string; attribution?:string; projectType:string; gameDescription?:string; summary:string; shortDescription:string; heroImage:string; logo:string; trailer?:ProjectTrailer; tags:string[]; platforms?:string[]; officialWebsite?:OfficialWebsite; officialLinks?:StoreLink[]; qaSupportSummary?:string; engagementFacts?:ProjectFact[]; publicMetrics?:ProjectMetric[]; coverageCaveat?:string; role:string; responsibilities:string[]; testingActivities:string[]; exampleAreasTested:string[]; representativeFindings?:string[]; recommendations?:string[]; challenges:string[]; lessonsLearned:string[]; technologies:string[]; sectionOrder?:ProjectSectionKey[]; sectionTitles?:Partial<Record<ProjectSectionKey,string>>; showRoleInResponsibilities?:boolean; confidentialityNote:string };
