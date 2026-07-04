@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
-// Single source of truth for the production origin. The site is published as a
-// GitHub user page at the domain root (no base path), so canonical URLs and the
-// sitemap/robots references all live directly under this origin.
-export const siteUrl = 'https://marcolabate.github.io';
+// Single source of truth for the production origin. The site is published on
+// GitHub Pages under the custom domain at the root (no base path), so canonical
+// URLs and the sitemap/robots references all live directly under this origin.
+export const siteUrl = 'https://marcolabate.games';
 // Short brand name, used for og:site_name and as the page-title suffix.
 export const siteName = 'Marco Labate';
 // Full home-page and default social title, pairing the brand with the primary
@@ -15,7 +15,14 @@ export const siteTitle = 'Marco Labate | Senior Game QA / DevQA Analyst';
 export const positioning =
  'Senior Game QA / DevQA Analyst and Software QA Consultant with 10+ years across PC, console and enterprise software testing.';
 
-export const defaultOgImage = '/videos/portfolio-trailer-poster.webp';
+// Purpose-built 1200x630 PNG social card (LinkedIn does not reliably support
+// webp og:images, and a video poster carries no identity at card size).
+export const defaultOgImage = '/og/og-home.png';
+export const ogImageAlt = 'Marco Labate, Senior Game QA / DevQA Analyst';
+// Search/social meta description: proof-led variant of the positioning
+// statement, kept under ~155 characters for SERP display.
+export const metaDescription =
+ 'Senior Game QA / DevQA Analyst. Embedded DevQA on RuneScape: Dragonwilds (Jagex), 100+ titles tested, Game Quality certified. Based in Italy, remote.';
 export const publicCvPath = '/assets/Marco_Labate_CV_Public.pdf';
 export const publicCvDownloadName = 'Marco_Labate_CV_Public.pdf';
 

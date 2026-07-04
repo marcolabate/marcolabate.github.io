@@ -8,13 +8,13 @@ import { pageMeta, publicCvDownloadName, publicCvPath } from '@/lib/site';
 
 export const metadata: Metadata = pageMeta({
  title: 'Contact',
- description: 'Contact Marco Labate for Game QA / DevQA, Software QA consulting, UAT and release-readiness support. Email, LinkedIn and CV download.',
+ description: 'Contact Marco Labate for Game QA / DevQA, Software QA consulting, UAT and release-readiness support. Based in Italy, remote. Email, LinkedIn and CV download.',
  path: '/contact/'
 });
 
 export default function Contact(){
  const links = [
-  {title: 'Email', linkText: 'marco.labate@outlook.it', href: 'mailto:marco.labate@outlook.it', Icon: Mail, external: false},
+  {title: 'Email', linkText: 'contact@marcolabate.games', href: 'mailto:contact@marcolabate.games', Icon: Mail, external: false},
   {title: 'LinkedIn', linkText: 'Connect on LinkedIn', href: 'https://www.linkedin.com/in/marco-labate/', Icon: LinkIcon, external: true},
   {title: 'Download CV', linkText: 'Download CV', href: publicCvPath, Icon: FileText, external: false, downloadName: publicCvDownloadName, description: 'Public CV version available for recruiters and hiring teams.'}
  ];
@@ -30,6 +30,7 @@ export default function Contact(){
  return <>
   <PageHeader eyebrow="Contact" title="Available for studios, publishers, QA partners, and long-term roles.">
    <p>For professional opportunities, freelance QA support, DevQA work, Software QA consulting, or recruitment conversations, use the contact options below.</p>
+   <p className="mt-4 text-base font-semibold text-primary">Based in Italy (CET) · Remote · Open to consulting, contract engagements and long-term roles</p>
   </PageHeader>
   <section className="py-16">
    <Container>
@@ -58,7 +59,7 @@ export default function Contact(){
         </li>
        ))}
       </ul>
-      <p className="mt-5 leading-relaxed text-secondary">Available for remote work with international teams, and open to long-term roles, contract engagements and QA consulting.</p>
+      <p className="mt-5 leading-relaxed text-secondary">Based in Italy (CET) and working remotely with international teams. Open to long-term roles, contract engagements, embedded QA support and QA consulting.</p>
      </Card>
     </Reveal>
    </Container>
