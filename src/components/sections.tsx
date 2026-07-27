@@ -11,13 +11,13 @@ export function ProjectGrid({headingLevel=3}:{headingLevel?:2|3}){
 }
 export function SkillsGrid({headingLevel=3}:{headingLevel?:2|3}){const Heading=headingLevel===2?'h2':'h3';return <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{skillGroups.map((g,i)=><Reveal key={g.title} delay={i*70} className="h-full"><Card interactive className="h-full"><Heading className="text-xl font-bold text-primary">{g.title}</Heading><div className="mt-4 flex flex-wrap gap-2">{g.items.map(item=><Badge key={item}>{item}</Badge>)}</div></Card></Reveal>)}</div>}
 export function CaseStudyGrid(){return <div className="grid gap-6 md:grid-cols-2">{caseStudies.map((caseStudy,i)=><Reveal key={caseStudy.slug} delay={i*70} className={`h-full ${i===0?'md:col-span-2':''}`}><CaseStudyCard caseStudy={caseStudy}/></Reveal>)}</div>}
-export function CertificationGrid(){return <div className="grid gap-6 md:grid-cols-3">{certifications.map((c,i)=><Reveal key={c.title} delay={i*70} className="h-full"><Card interactive className="h-full"><p className="text-xs uppercase tracking-[.25em] text-cyan">{c.status}</p><h2 className="mt-3 text-xl font-bold text-primary">{c.title}</h2><p className="mt-1 text-sm text-muted">{c.issuer}</p><p className="mt-4 text-secondary">{c.description}</p></Card></Reveal>)}</div>}
+export function CertificationGrid(){return <div className="grid gap-6 md:grid-cols-2">{certifications.map((c,i)=><Reveal key={c.id} delay={i*70} className="h-full"><article className="h-full"><Card interactive className="h-full"><div className="flex items-center justify-between gap-3"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-pillBorder bg-pill text-cyan"><BadgeCheck className="h-[18px] w-[18px]" aria-hidden="true"/></span><p className="text-xs uppercase tracking-[.25em] text-cyan">{c.status}</p></div><h2 className="mt-4 text-xl font-bold text-primary">{c.title}</h2><p className="mt-2 text-sm text-muted">{c.issuer}</p><p className="mt-1 text-sm font-medium text-cyan">{c.issuedLabel}</p><p className="mt-4 text-secondary">{c.description}</p>{c.credentialId?<p className="mt-4 text-sm text-muted"><span className="font-semibold text-primary">Credential ID:</span> {c.credentialId}</p>:null}{c.expiresLabel?<p className="mt-2 text-sm text-muted">{c.expiresLabel}</p>:null}{c.credentialUrl?<a className="focus-ring mt-4 inline-flex rounded-sm font-semibold text-cyan hover:text-cyanHover" href={c.credentialUrl} target="_blank" rel="noopener noreferrer">Verify credential</a>:null}</Card></article></Reveal>)}</div>}
 function QaSnapshot(){
  const items=[
   {Icon:CalendarClock,label:'10+ years in QA'},
   {Icon:Gamepad2,label:'100+ game titles/projects tested · Keywords Studios, 2016 – 2023'},
   {Icon:CodeXml,label:'Embedded DevQA on RuneScape: Dragonwilds (Jagex), 2025 – present'},
-  {Icon:BadgeCheck,label:'Foundation Certificate in Game Quality (2025)'},
+  {Icon:BadgeCheck,label:'ISTQB® CTFL v4.0 and Game Quality certified'},
   {Icon:ListChecks,label:'Game QA, DevQA, UAT and SQL validation'},
   {Icon:Globe,label:'Remote from Italy with international teams'}
  ];

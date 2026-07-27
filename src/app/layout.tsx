@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { certifications } from '@/data/certifications';
 import { siteUrl, siteName, siteTitle, metaDescription, defaultOgImage, ogImageAlt } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -41,7 +42,16 @@ const jsonLd={
    knowsLanguage:['it','en'],
    knowsAbout:['Game QA','Embedded DevQA','Regression testing','Exploratory testing','UAT','SQL data validation','Playtesting'],
    worksFor:[{'@type':'Organization',name:'DAQA'},{'@type':'Organization',name:'Kosmoy'},{'@type':'Organization',name:'TXT Group'}],
-   hasCredential:{'@type':'EducationalOccupationalCredential',name:'Foundation Certificate in Game Quality'}
+   hasCredential:certifications.map(certification=>({
+    '@type':'EducationalOccupationalCredential',
+    name:certification.title,
+    description:certification.description,
+    credentialCategory:'Professional certification',
+    dateCreated:certification.issuedDate,
+    recognizedBy:{'@type':'Organization',name:certification.issuer},
+    ...(certification.credentialId?{identifier:certification.credentialId}:{}),
+    ...(certification.credentialUrl?{url:certification.credentialUrl}:{})
+   }))
   }
  ]
 };

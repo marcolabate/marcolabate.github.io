@@ -22,7 +22,7 @@ export const ogImageAlt = 'Marco Labate, Senior Game QA / DevQA Analyst';
 // Search/social meta description: proof-led variant of the positioning
 // statement, kept under ~155 characters for SERP display.
 export const metaDescription =
- 'Senior Game QA / DevQA Analyst. Embedded DevQA on RuneScape: Dragonwilds (Jagex), 100+ titles tested, Game Quality certified. Based in Italy, remote.';
+ 'Senior Game QA / DevQA Analyst. Embedded DevQA on RuneScape: Dragonwilds (Jagex), 100+ titles tested, ISTQB® CTFL v4.0 and Game Quality certified.';
 export const publicCvPath = '/assets/Marco_Labate_CV_Public.pdf';
 export const publicCvDownloadName = 'Marco_Labate_CV_Public.pdf';
 
