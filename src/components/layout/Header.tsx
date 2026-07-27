@@ -17,6 +17,7 @@ export function Header(){
   {href:'/case-studies/',label:'Case Studies'},
   {href:'/beyond-game-qa/',label:'Software QA'},
   {href:'/about/',label:'About'},
+  {href:'/certifications/',label:'Certifications'},
   {href:'/contact/',label:'Contact'}
  ];
  const isActive=(href:string)=>href===home?pathname===home:(pathname===href||pathname.startsWith(href));
