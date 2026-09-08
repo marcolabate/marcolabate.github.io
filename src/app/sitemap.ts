@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
  const routes = [
   '/',
   '/about/',
+  '/selected-work/',
   '/projects/',
   '/case-studies/',
   '/beyond-game-qa/',

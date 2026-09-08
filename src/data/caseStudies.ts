@@ -53,6 +53,8 @@ export type CaseStudy = {
  label: 'Featured Case Study' | 'Case Study';
  kind: CaseStudyKind;
  artifact?: CaseStudyArtifact;
+ exampleFinding?: boolean;
+ visualQuality?: { title: string; body: string }[];
  referenceMaterial?: CaseStudyReferenceMaterial;
  backgroundMapping?: { title: string; body: string };
  title: string;
@@ -88,11 +90,17 @@ export const caseStudies: CaseStudy[] = [
   slug: 'character-driven-action-adventure',
   label: 'Featured Case Study',
   kind: 'Hypothetical QA exercise',
-  title: 'Applied QA Case Study: Systemic Action-Adventure QA',
-  description: 'A hypothetical QA exercise inspired by public information about Day 4 Night Studios’ Bradley the Badger, focused on systemic gameplay, progression state, save/load behavior, regression coverage and release readiness.',
+  title: 'How I Would QA a Systemic Game Like Bradley the Badger',
+  description: 'Independent QA exercise based exclusively on publicly available information. No professional involvement with Bradley the Badger or Day 4 Night Studios.',
   tags: ['Applied QA Exercise', 'Risk-Based Testing', 'Game QA'],
   eyebrow: 'Applied QA Exercise',
-  articleTitle: 'Applied QA Case Study: Systemic Action-Adventure QA',
+  exampleFinding: true,
+  visualQuality: [
+   {title: 'Read the next action', body: 'Check character and object silhouettes, lighting, navigation cues and UI/world-space prompts against busy backgrounds and camera occlusion. Players need to recognise a route or usable object before committing to an action.'},
+   {title: 'Trust the feedback', body: 'Compare VFX timing, animation transitions and interactive-state feedback with the actual gameplay state, including interruption and reload. A success effect on an incomplete puzzle can send players down the wrong path.'},
+   {title: 'Keep the world coherent', body: 'Look for clipping, intersections, material or shader inconsistencies and LOD/pop-in along traversal routes. Record when they hide a landmark, suggest a false opening or obscure a hazard; distinguish visual polish from functional impact.'}
+  ],
+  articleTitle: 'How I Would QA a Systemic Game Like Bradley the Badger',
   metaTitle: 'Systemic Action-Adventure QA Case Study',
   metaDescription: 'Independent QA portfolio case study inspired by public information about Bradley the Badger, focused on systemic gameplay, progression testing, save/load behavior, regression coverage and release readiness.',
   disclaimer: 'This is an independent applied QA exercise based only on public information about Bradley the Badger and transferable QA experience. It does not use private builds, internal tools, proprietary documentation, confidential material or any direct involvement with Day 4 Night Studios. All trademarks belong to their respective owners.',

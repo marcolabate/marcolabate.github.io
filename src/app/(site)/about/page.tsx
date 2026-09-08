@@ -14,15 +14,15 @@ export const metadata: Metadata = pageMeta({
 
 export default function About(){
  return <>
-  <PageHeader eyebrow="About" title="Senior QA Analyst with 10+ years across Game QA, DevQA, UAT and SQL-based software validation.">
-   <p>I'm Marco Labate, a Senior Game QA / DevQA Analyst and Software QA Consultant with 10+ years across PC, console and enterprise software testing.</p>
+  <PageHeader eyebrow="About" title="Marco Labate — working alongside development teams.">
+   <p>I'm a Senior Game QA / Embedded DevQA Analyst with 10+ years in QA. I currently support RuneScape: Dragonwilds with Jagex via DAQA, working remotely from Italy.</p>
   </PageHeader>
   <section className="py-16">
    <Container>
     <Reveal>
      <div className="max-w-3xl space-y-4 text-lg leading-relaxed text-secondary">
-      <p>I combine disciplined test design with player-focused observation, risk-based prioritization and reproducible evidence. My work spans DevQA, gameplay QA, playtesting, regression, live monitoring, UAT, SQL-based validation and defect analysis across game and enterprise software environments.</p>
-      <p>I approach games both as a tester and as a player. A good bug report should be actionable, but good QA also explains why an issue matters inside the real experience: controls, pacing, progression, feedback, clarity and player trust.</p>
+      <p>I work with evolving features: understanding the intended experience, exploring what players might do differently, and checking how changes affect connected systems. I share reproducible evidence, blockers and uncertainty with QA, production and developers so the team can act while there is still time to adjust.</p>
+      <p className="border-l-2 border-cyan pl-5 font-medium text-primary">I approach games both as a tester and as a player. A good bug report should be actionable, but good QA also explains why an issue matters inside the real experience: controls, pacing, progression, feedback, clarity and player trust.</p>
      </div>
     </Reveal>
 
@@ -33,8 +33,8 @@ export default function About(){
     <div className="mt-6 max-w-3xl"><Timeline/></div>
 
     <div className="mt-12 grid gap-8 lg:grid-cols-2">
-     <Reveal className="h-full"><Card interactive className="h-full"><h2 className="text-2xl font-bold text-primary">Who I am</h2><p className="mt-4 leading-relaxed text-secondary">QA professional with experience across Game QA, DevQA, software testing, UAT and SQL-based validation. I work best where practical testing, clear reporting and product understanding meet.</p></Card></Reveal>
-     <Reveal delay={80} className="h-full"><Card interactive className="h-full"><h2 className="text-2xl font-bold text-primary">How I test</h2><p className="mt-4 leading-relaxed text-secondary">I pair structured coverage with exploratory observation. I focus on reproducible evidence, regression risk, feature validation, UI clarity, progression flow and player-impacting issues.</p></Card></Reveal>
+     <Reveal className="h-full"><Card interactive className="h-full"><h2 className="text-2xl font-bold text-primary">Who I am</h2><p className="mt-4 leading-relaxed text-secondary">My background spans large-scale outsourced game testing, localization, embedded development support and enterprise systems. That range helps me connect a player-facing symptom to the workflow or state behind it.</p></Card></Reveal>
+     <Reveal delay={80} className="h-full"><Card interactive className="h-full"><h2 className="text-2xl font-bold text-primary">How I test</h2><p className="mt-4 leading-relaxed text-secondary">I establish the intended path, then vary action order, interrupt transitions and revisit earlier states. When a fix lands, I repeat the original reproduction and check connected flows for side effects.</p></Card></Reveal>
      <Reveal delay={160} className="h-full"><Card interactive className="h-full"><h2 className="text-2xl font-bold text-primary">Why games matter</h2><p className="mt-4 leading-relaxed text-secondary">Game QA requires game literacy. Understanding progression, combat feel, readability, onboarding, systems friction and long-term engagement makes testing sharper and more useful.</p></Card></Reveal>
      <Reveal delay={240} className="h-full"><Card interactive className="h-full"><h2 className="text-2xl font-bold text-primary">Software QA mindset</h2><p className="mt-4 leading-relaxed text-secondary">My software QA work strengthens my game QA practice: requirements validation, test case design, UAT, SQL checks, XML validation, logs, workflow states and defect lifecycle management.</p></Card></Reveal>
     </div>

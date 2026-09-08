@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ExampleQaFinding } from '@/components/case-studies/ExampleQaFinding';
 import { Container } from '@/components/ui/Container';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
@@ -63,6 +64,7 @@ export function CaseStudyArticle({caseStudy}: {caseStudy: CaseStudy}) {
   <>
    <PageHeader eyebrow={caseStudy.eyebrow} title={caseStudy.articleTitle ?? caseStudy.title}>
     <p>{caseStudy.description}</p>
+    {caseStudy.exampleFinding && <nav aria-label="Case study sections" className="mt-5 flex flex-wrap gap-3 text-sm"><Link className="focus-ring rounded-full border border-line px-4 py-3 font-semibold text-cyan" href="#example-finding">Example QA finding</Link><Link className="focus-ring rounded-full border border-line px-4 py-3 font-semibold text-cyan" href="#visual-quality">Visual quality & readability</Link><Link className="focus-ring rounded-full border border-line px-4 py-3 font-semibold text-cyan" href="#test-first">Gameplay coverage</Link></nav>}
    </PageHeader>
    <article className="py-12 sm:py-16">
     <Container>
@@ -78,7 +80,7 @@ export function CaseStudyArticle({caseStudy}: {caseStudy: CaseStudy}) {
       <p className="mt-6 max-w-3xl text-lg leading-relaxed text-secondary">
        {caseStudy.intro}
       </p>
-      {caseStudy.referenceMaterial && <CaseStudyReferenceMaterial reference={caseStudy.referenceMaterial}/>}
+
      </Reveal>
 
      {caseStudy.demonstrates && caseStudy.demonstrates.length > 0 && (
@@ -97,6 +99,8 @@ export function CaseStudyArticle({caseStudy}: {caseStudy: CaseStudy}) {
       </Reveal>
      )}
 
+     {caseStudy.exampleFinding && <ExampleQaFinding/>}
+     {caseStudy.visualQuality && <section className="mt-10 scroll-mt-24" aria-labelledby="visual-quality"><h2 id="visual-quality" className="scroll-mt-24 text-2xl font-bold text-primary">Visual Quality & Gameplay Readability</h2><p className="mt-3 max-w-3xl text-secondary">I would assess presentation as part of functional Game QA, discussing findings with art, design and engineering. The aim is to explain what players cannot see, understand or trust, with the visual solution owned by the relevant discipline.</p><div className="mt-5 grid gap-4 md:grid-cols-3">{caseStudy.visualQuality.map(item=><Card key={item.title}><h3 className="text-lg font-semibold text-primary">{item.title}</h3><p className="mt-3 text-sm leading-relaxed text-secondary">{item.body}</p></Card>)}</div></section>}
      <Reveal className="mt-12">
       <h2 className="text-2xl font-bold text-primary">Risk profile</h2>
       <p className="mt-3 max-w-3xl leading-relaxed text-secondary">{caseStudy.riskIntro}</p>
@@ -110,7 +114,7 @@ export function CaseStudyArticle({caseStudy}: {caseStudy: CaseStudy}) {
      </Reveal>
 
      <Reveal className="mt-12">
-      <h2 className="text-2xl font-bold text-primary">What I would test first</h2>
+      <h2 className="scroll-mt-24 text-2xl font-bold text-primary" id="test-first">What I would test first</h2>
       <p className="mt-3 max-w-3xl leading-relaxed text-secondary">{caseStudy.testFirstIntro}</p>
      </Reveal>
      <div className="mt-6 grid gap-6 lg:grid-cols-2">
@@ -148,6 +152,8 @@ export function CaseStudyArticle({caseStudy}: {caseStudy: CaseStudy}) {
      </div>
 
      {caseStudy.artifact && <ArtifactBlock artifact={caseStudy.artifact} />}
+
+     {caseStudy.referenceMaterial && <CaseStudyReferenceMaterial reference={caseStudy.referenceMaterial}/>}
 
      {caseStudy.backgroundMapping && (
       <Reveal className="mt-12">

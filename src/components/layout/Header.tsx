@@ -12,7 +12,7 @@ export function Header(){
  const pathname=usePathname();
  const home='/';
  const nav=[
-  {href:home,label:'Home'},
+  {href:'/selected-work/',label:'Selected Work'},
   {href:'/projects/',label:'Projects'},
   {href:'/case-studies/',label:'Case Studies'},
   {href:'/beyond-game-qa/',label:'Software QA'},
@@ -29,7 +29,7 @@ export function Header(){
      {nav.map(item=>{const active=isActive(item.href);return <Link key={item.href} href={item.href} aria-current={active?'page':undefined} className={`link-underline focus-ring rounded-sm transition hover:text-primary ${active?'font-semibold text-primary':''}`}>{item.label}</Link>})}
     </nav>
     <ThemeToggle/>
-    <button className="focus-ring inline-flex h-9 w-9 items-center justify-center rounded-full text-primary lg:hidden" aria-label="Toggle menu" aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X aria-hidden="true"/>:<Menu aria-hidden="true"/>}</button>
+    <button className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-full text-primary lg:hidden" aria-label="Toggle menu" aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X aria-hidden="true"/>:<Menu aria-hidden="true"/>}</button>
    </div>
   </Container>
   {open&&<div className="border-t border-line bg-nav lg:hidden">
