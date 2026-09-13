@@ -1,68 +1,10 @@
-import type { Metadata } from 'next';
-import { FileText, Link as LinkIcon, Mail } from 'lucide-react';
+import { ArrowUpRight, Download } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
-import { Card } from '@/components/ui/Card';
-import { PageHeader } from '@/components/sections';
-import { Reveal } from '@/components/motion/Reveal';
 import { pageMeta, publicCvDownloadName, publicCvPath } from '@/lib/site';
-
-export const metadata: Metadata = pageMeta({
- title: 'Contact',
- description: 'Contact Marco Labate for Game QA / DevQA, Software QA consulting, UAT and release-readiness support. Based in Italy, remote. Email, LinkedIn and CV download.',
- path: '/contact/'
-});
-
-export default function Contact(){
- const links = [
-  {title: 'Email', linkText: 'contact@marcolabate.games', href: 'mailto:contact@marcolabate.games', Icon: Mail, external: false},
-  {title: 'LinkedIn', linkText: 'Connect on LinkedIn', href: 'https://www.linkedin.com/in/marco-labate/', Icon: LinkIcon, external: true},
-  {title: 'Download CV', linkText: 'Download CV', href: publicCvPath, Icon: FileText, external: false, downloadName: publicCvDownloadName, description: 'Public CV version available for recruiters and hiring teams.'}
- ];
-
- const bestFit = [
-  'Game QA / DevQA roles',
-  'Embedded QA support',
-  'Regression and release-readiness coverage',
-  'Structured playtesting and player-experience feedback',
-  'Software QA, UAT and SQL-based validation'
- ];
-
- return <>
-  <PageHeader eyebrow="Contact" title="Available for studios, publishers, QA partners, and long-term roles.">
-   <p>For professional opportunities, freelance QA support, DevQA work, Software QA consulting, or recruitment conversations, use the contact options below.</p>
-   <p className="mt-4 text-base font-semibold text-primary">Based in Italy (CET) · Remote · Open to consulting, contract engagements and long-term roles</p>
-  </PageHeader>
-  <section className="py-16">
-   <Container>
-    <div className="grid gap-6 md:grid-cols-3">
-     {links.map(({title,linkText,href,Icon,external,downloadName,description},i)=>
-      <Reveal key={title} delay={i*70} className="h-full">
-       <Card interactive className="h-full">
-        <Icon className="text-cyan" aria-hidden="true"/>
-        <h2 className="mt-4 text-xl font-bold text-primary">{title}</h2>
-        {description ? <p className="mt-3 text-sm leading-relaxed text-secondary">{description}</p> : null}
-        <a className="group/clink focus-ring mt-3 inline-flex w-fit items-center gap-1 rounded-sm font-semibold text-cyan hover:text-cyanHover" href={href} target={external?'_blank':undefined} rel={external?'noopener noreferrer':undefined} download={downloadName}>
-         {linkText} <span aria-hidden="true" className="transition-transform duration-200 motion-safe:group-hover/clink:translate-x-1 motion-safe:group-focus-visible/clink:translate-x-1">{'\u2192'}</span>
-        </a>
-       </Card>
-      </Reveal>
-     )}
-    </div>
-    <Reveal className="mt-8">
-     <Card>
-      <h2 className="text-xl font-bold text-primary">Best fit</h2>
-      <ul className="mt-4 grid gap-x-8 gap-y-2.5 text-secondary sm:grid-cols-2">
-       {bestFit.map(item => (
-        <li key={item} className="flex gap-3">
-         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"/>
-         <span className="leading-relaxed">{item}</span>
-        </li>
-       ))}
-      </ul>
-      <p className="mt-5 leading-relaxed text-secondary">Based in Italy (CET) and working remotely with international teams. Open to long-term roles, contract engagements, embedded QA support and QA consulting.</p>
-     </Card>
-    </Reveal>
-   </Container>
-  </section>
- </>;
+export const metadata = pageMeta({title: 'Contact', description: 'Contact Marco Labate for embedded Game QA, Software QA consulting or a long-term role. Based in Italy and working remotely. Email, LinkedIn and CV.', path: '/contact/'});
+export default function Contact() {
+ return <Container>
+  <header className="page-intro"><p className="eyebrow">Contact</p><h1>Let’s talk about your team.</h1><p>Open to embedded QA, consulting engagements and long-term roles with game studios, publishers, QA partners and software teams.</p><p className="mt-4">Based in Italy (CET/CEST) · Working remotely in English and Italian</p></header>
+  <div className="contact-page-links"><div><h2>Email</h2><a className="text-link" href="mailto:contact@marcolabate.games">contact@marcolabate.games <ArrowUpRight size={17} aria-hidden="true"/></a><p>Share the role, project or QA support you have in mind.</p></div><div><h2>LinkedIn</h2><a className="text-link" href="https://www.linkedin.com/in/marco-labate/">Connect on LinkedIn <ArrowUpRight size={17} aria-hidden="true"/></a><p>Professional background and direct messages.</p></div><div><h2>CV</h2><a className="text-link" href={publicCvPath} download={publicCvDownloadName}>Download CV <Download size={17} aria-hidden="true"/></a><p>Public PDF for recruiters and hiring teams.</p></div></div>
+ </Container>;
 }

@@ -8,7 +8,7 @@ export const siteUrl = 'https://marcolabate.games';
 export const siteName = 'Marco Labate';
 // Full home-page and default social title, pairing the brand with the primary
 // positioning. Sub-pages compose their own title via the "%s | Marco Labate" template.
-export const siteTitle = 'Marco Labate | Senior Game QA / Embedded DevQA Analyst';
+export const siteTitle = 'Marco Labate | Senior Game QA Analyst & Embedded DevQA';
 
 // Consistent primary positioning statement reused across metadata, hero, footer
 // and About so the site presents one coherent professional identity.
@@ -22,7 +22,7 @@ export const ogImageAlt = 'Marco Labate, Senior Game QA / Embedded DevQA Analyst
 // Search/social meta description: proof-led variant of the positioning
 // statement, kept under ~155 characters for SERP display.
 export const metaDescription =
- 'Senior Game QA / Embedded DevQA Analyst. Embedded DevQA on RuneScape: Dragonwilds (Jagex), 100+ titles tested, ISTQB® CTFL v4.0 and Game Quality certified.';
+ 'Senior Game QA Analyst. Embedded DevQA on RuneScape: Dragonwilds via DAQA, 10+ years in testing and independent QA investigations. View work and contact Marco.';
 export const publicCvPath = '/assets/Marco_Labate_CV_Public.pdf';
 export const publicCvDownloadName = 'Marco_Labate_CV_Public.pdf';
 

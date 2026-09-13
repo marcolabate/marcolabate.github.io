@@ -1,4 +1,9 @@
 import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
-
-export function Footer(){return <footer className="border-t border-line bg-section/50 py-7 text-sm text-secondary"><Container><div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between"><p>© {new Date().getFullYear()} Marco Labate, Senior Game QA / Embedded DevQA Analyst</p><div className="flex flex-wrap items-center gap-x-4 gap-y-2"><p>Game QA, DevQA and Software QA portfolio.</p><Link href="/privacy/" className="focus-ring rounded-sm underline decoration-line underline-offset-4 transition hover:text-primary">Privacy / Cookie Notice</Link></div></div><p className="mt-4 max-w-4xl leading-relaxed">Game titles, logos and trademarks are property of their respective owners and are used here for portfolio identification purposes only.</p></Container></footer>}
+import { ThemeToggle } from '@/components/theme/ThemeToggle';
+export function Footer() {
+ return <footer className="site-footer"><Container>
+  <div className="footer-top"><p>© {new Date().getFullYear()} Marco Labate</p><div className="footer-links"><Link href="/privacy/" className="text-link">Privacy / Cookie Notice</Link><ThemeToggle/></div></div>
+  <p className="footer-attribution">Game artwork, titles, logos and trademarks belong to their respective owners and are used for portfolio identification.</p>
+ </Container></footer>;
+}

@@ -7,7 +7,7 @@ import { caseStudies } from '@/data/caseStudies';
 import { pageMeta } from '@/lib/site';
 
 export const metadata: Metadata = pageMeta({
- title: 'QA Case Studies',
+ title: 'QA Practice',
  description: 'QA methodology pieces and applied exercises: risk-based testing, live patch monitoring, progression balance, UI/UX guidance and multiplayer regression.',
  path: '/case-studies/'
 });
@@ -15,7 +15,7 @@ export const metadata: Metadata = pageMeta({
 export default function CaseStudies() {
  return (
   <>
-   <PageHeader eyebrow="Case Studies" title="QA Case Studies">
+   <PageHeader eyebrow="Work / Independent exercises" title="QA Practice">
     <p>Methodology pieces and applied exercises showing how I structure coverage, exploratory testing and reporting across gameplay systems, live updates, player guidance, progression and multiplayer. Each is clearly labeled and based on public information or hypothetical scenarios, not a disclosure of confidential project work.</p>
    </PageHeader>
    <section className="py-12 sm:py-16">

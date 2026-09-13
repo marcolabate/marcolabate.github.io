@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Container } from '@/components/ui/Container';
 import { Card } from '@/components/ui/Card';
-import { PageHeader, SkillsGrid, Timeline } from '@/components/sections';
+import { PageHeader, SkillsGrid, Timeline, CertificationGrid } from '@/components/sections';
 import { Reveal } from '@/components/motion/Reveal';
 import { Badge } from '@/components/ui/Badge';
 import { pageMeta } from '@/lib/site';
@@ -14,7 +14,7 @@ export const metadata: Metadata = pageMeta({
 
 export default function About(){
  return <>
-  <PageHeader eyebrow="About" title="Marco Labate — working alongside development teams.">
+  <PageHeader eyebrow="About" title="A tester, a player, a teammate.">
    <p>I'm a Senior Game QA / Embedded DevQA Analyst with 10+ years in QA. I currently support RuneScape: Dragonwilds with Jagex via DAQA, working remotely from Italy.</p>
   </PageHeader>
   <section className="py-16">
@@ -27,10 +27,10 @@ export default function About(){
     </Reveal>
 
     <Reveal className="mt-12">
-     <h2 className="text-3xl font-bold text-primary">Professional timeline</h2>
+     <h2 id="career" className="text-3xl font-bold text-primary">Professional timeline</h2>
      <p className="mt-3 max-w-3xl leading-relaxed text-secondary">Where the 10+ years and 100+ game titles/projects come from. Recent featured projects are credited under DAQA; earlier high-volume outsourced work spans many titles not individually listed here.</p>
     </Reveal>
-    <div className="mt-6 max-w-3xl"><Timeline/></div>
+    <div className="mt-6 max-w-3xl"><Timeline/></div><p className="mt-6 max-w-3xl text-secondary">Earlier experience: 2010–2019, Italian localization and LQA for Valve, Digital Extremes and Phoenix Labs, including Steam, Team Fortress 2, Counter-Strike: Global Offensive, Dota 2, Warframe and Dauntless.</p>
 
     <div className="mt-12 grid gap-8 lg:grid-cols-2">
      <Reveal className="h-full"><Card interactive className="h-full"><h2 className="text-2xl font-bold text-primary">Who I am</h2><p className="mt-4 leading-relaxed text-secondary">My background spans large-scale outsourced game testing, localization, embedded development support and enterprise systems. That range helps me connect a player-facing symptom to the workflow or state behind it.</p></Card></Reveal>
@@ -39,7 +39,8 @@ export default function About(){
      <Reveal delay={240} className="h-full"><Card interactive className="h-full"><h2 className="text-2xl font-bold text-primary">Software QA mindset</h2><p className="mt-4 leading-relaxed text-secondary">My software QA work strengthens my game QA practice: requirements validation, test case design, UAT, SQL checks, XML validation, logs, workflow states and defect lifecycle management.</p></Card></Reveal>
     </div>
 
-    <Reveal><h2 className="mt-16 text-3xl font-bold text-primary">Tools and technologies</h2></Reveal>
+    <section id="certifications" className="mt-16"><h2 className="text-3xl font-bold text-primary">Certifications</h2><div className="mt-6"><CertificationGrid/></div></section>
+    <Reveal><h2 id="skills" className="mt-16 text-3xl font-bold text-primary">Tools and technologies</h2></Reveal>
     <div className="mt-8"><SkillsGrid/></div>
 
     <Reveal className="mt-16"><h2 className="text-2xl font-bold text-primary">Game literacy and design interests</h2><p className="mt-3 max-w-3xl leading-relaxed text-secondary">Beyond credited work, broad play experience informs how I evaluate player expectations, usability, pacing, onboarding, genre conventions, readability, combat feedback, multiplayer friction and player-facing quality.</p></Reveal>

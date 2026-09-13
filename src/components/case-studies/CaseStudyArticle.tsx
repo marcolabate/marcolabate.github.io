@@ -83,6 +83,7 @@ export function CaseStudyArticle({caseStudy}: {caseStudy: CaseStudy}) {
 
      </Reveal>
 
+     {caseStudy.exampleFinding && <ExampleQaFinding/>}
      {caseStudy.demonstrates && caseStudy.demonstrates.length > 0 && (
       <Reveal className="mt-8">
        <div className="max-w-3xl rounded-2xl border border-line bg-section p-6">
@@ -99,7 +100,6 @@ export function CaseStudyArticle({caseStudy}: {caseStudy: CaseStudy}) {
       </Reveal>
      )}
 
-     {caseStudy.exampleFinding && <ExampleQaFinding/>}
      {caseStudy.visualQuality && <section className="mt-10 scroll-mt-24" aria-labelledby="visual-quality"><h2 id="visual-quality" className="scroll-mt-24 text-2xl font-bold text-primary">Visual Quality & Gameplay Readability</h2><p className="mt-3 max-w-3xl text-secondary">I would assess presentation as part of functional Game QA, discussing findings with art, design and engineering. The aim is to explain what players cannot see, understand or trust, with the visual solution owned by the relevant discipline.</p><div className="mt-5 grid gap-4 md:grid-cols-3">{caseStudy.visualQuality.map(item=><Card key={item.title}><h3 className="text-lg font-semibold text-primary">{item.title}</h3><p className="mt-3 text-sm leading-relaxed text-secondary">{item.body}</p></Card>)}</div></section>}
      <Reveal className="mt-12">
       <h2 className="text-2xl font-bold text-primary">Risk profile</h2>
@@ -190,9 +190,9 @@ export function CaseStudyArticle({caseStudy}: {caseStudy: CaseStudy}) {
      </Reveal>
 
      <Reveal className="mt-10">
-      <Link href="/case-studies/" className="group/back focus-ring inline-flex items-center gap-1 rounded-sm font-semibold text-cyan transition hover:text-cyanHover">
+      <Link href="/selected-work/#qa-practice" className="group/back focus-ring inline-flex items-center gap-1 rounded-sm font-semibold text-cyan transition hover:text-cyanHover">
        <span aria-hidden="true" className="transition-transform duration-200 motion-safe:group-hover/back:-translate-x-1">←</span>
-       Back to QA Case Studies
+       Back to QA Practice
       </Link>
      </Reveal>
     </Container>

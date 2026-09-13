@@ -35,7 +35,7 @@ export function YouTubeTrailer({youtubeId,title,thumbnailSrc,thumbnailFallbackSr
      onError={()=>thumbnailFallbackSrc&&thumbnail!==thumbnailFallbackSrc&&setThumbnail(thumbnailFallbackSrc)}
     />
     <div className="absolute inset-0 flex items-center justify-center bg-[rgba(7,10,18,.58)] p-4">
-     <button type="button" onClick={()=>setIsLoaded(true)} className="focus-ring inline-flex items-center gap-2 rounded-full bg-buttonPrimary px-5 py-3 text-sm font-semibold text-buttonPrimaryText shadow-card transition hover:bg-buttonPrimaryHover motion-safe:hover:-translate-y-0.5" aria-label={`Load ${title}`}>
+     <button type="button" data-youtube-id={youtubeId} onClick={()=>setIsLoaded(true)} className="focus-ring inline-flex items-center gap-2 rounded-full bg-buttonPrimary px-5 py-3 text-sm font-semibold text-buttonPrimaryText shadow-card transition hover:bg-buttonPrimaryHover motion-safe:hover:-translate-y-0.5" aria-label={`Load ${title}`}>
       <Play className="h-4 w-4" fill="currentColor" aria-hidden="true"/>
       Load video
      </button>

@@ -2,10 +2,11 @@
   "name": "marco-labate-portfolio",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node scripts/dev.mjs",
     "build": "next build",
     "lint": "npm run typecheck",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "preview": "node scripts/preview.mjs"
   },
   "dependencies": {
     "@types/node": "latest",
